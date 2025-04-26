@@ -5,15 +5,8 @@ export default defineNuxtConfig({
 
 	modules: [
 		'@pinia/nuxt',
-		'@nuxtjs/tailwindcss',
 		"@nuxtjs/color-mode",
-		'shadcn-nuxt',
 	],
-
-	shadcn: {
-		prefix: '',
-		componentDir: './components/shadcn-ui/'
-	},
 
 	colorMode: {
 		classSuffix: "",

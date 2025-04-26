@@ -1,9 +1,9 @@
 <template>
 	<div class="container">
 		<header class="header">
-			<div class="header__logo">
-				<icons-logo />
-			</div>
+			<nuxt-link to="/" class="header__logo">
+				Logo
+			</nuxt-link>
 			<nav class="header__navigation">
 				<NuxtLink class="header__navigation-link" to="/">
 					Главная
