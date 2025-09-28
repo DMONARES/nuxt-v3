@@ -80,82 +80,85 @@
 	</div>
 </template>
 
-<style lang='scss'>
-	.ui-input
+<style lang="scss" scoped>
+@use "~/assets/styles/variables/index" as *;
+@use "~/assets/styles/base/mixins" as *;
+
+.ui-input
+{
+	&.active
 	{
-		&.active
-		{
-			.ui-input__input { border-color: $black; }
-		}
-
-		&.error
-		{
-			.ui-input__input { border-color: $red; }
-		}
-
-		&.disabled { cursor: not-allowed; }
+		.ui-input__input { border-color: var(--color-primary); }
 	}
 
-	.ui-input__wr { position: relative; }
-
-	.ui-input__label
+	&.error
 	{
-		width: max-content;
-		display: block;
-		margin-bottom: 5px;
-		cursor: pointer;
-		font-size: 1rem;
-		font-weight: 500;
-		color: $black;
-
-		@include transition();
+		.ui-input__input { border-color: var(--color-error); }
 	}
 
-	.ui-input__input
+	&.disabled { cursor: not-allowed; }
+}
+
+.ui-input__wr { position: relative; }
+
+.ui-input__label
+{
+	width: max-content;
+	display: block;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--color-text);
+
+	@include transition();
+}
+
+.ui-input__input
+{
+	// default
+	width: 100%;
+	padding: 12px 16px;
+	border: 2px solid var(--color-border);
+	outline: none;
+	border-radius: 6px;
+	background-color: var(--color-surface);
+	color: var(--color-text);
+	font-size: 1rem;
+	@include transition();
+
+	// effects
+	&:hover { border-color: var(--color-primary); }
+	&::placeholder { color: var(--color-text-secondary); }
+	&:disabled
 	{
-		// default
-		width: 100%;
-		padding: 10px 32px 10px 15px;
-		border: 2px solid $gray;
-		outline: none;
-		border-radius: 4px;
-		background-color: $white;
-		color: $black;
-		font-size: 1rem;
-		@include transition();
-
-		// effects
-		&:hover { border-color: $black; }
-		&::placeholder { color: $gray; }
-		&:disabled
-		{
-			pointer-events: none;
-			opacity: .5;
-		}
+		pointer-events: none;
+		opacity: .5;
 	}
+}
 
-	.ui-input__error-text
+.ui-input__error-text
+{
+	display: block;
+	margin-top: 5px;
+	color: var(--color-error);
+	font-size: .75rem;
+}
+
+.ui-input__icon
+{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	line-height: 0;
+	overflow: hidden;
+
+	svg
 	{
-		display: block;
-		margin-top: 5px;
-		color: $red;
-		font-size: .75rem;
+		width: 16px;
+		height: 16px;
 	}
-
-	.ui-input__icon
-	{
-		cursor: pointer;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 10px;
-		line-height: 0;
-		overflow: hidden;
-
-		svg
-		{
-			width: 16px;
-			height: 16px;
-		}
-	}
+}
 </style>

@@ -1,20 +1,20 @@
 /* Светлая тема */
 :root
 {
-  --color-primary: #0055ff;
-  --color-primary-hover: #0041cc;
-  --color-secondary: #ff6600;
-  --color-secondary-hover: #e65c00;
+  --color-primary: #8B0000;
+  --color-primary-hover: #A52A2A;
+  --color-secondary: #8B0000;
+  --color-secondary-hover: #A52A2A;
 
-  --color-background: #ffffff;
-  --color-surface: #f9f9f9;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #4d4d4d;
-  --color-border: #e0e0e0;
+  --color-background: #fefefe;
+  --color-surface: #ffffff;
+  --color-text: #2d2d2d;
+  --color-text-secondary: #6b6b6b;
+  --color-border: #e8e8e8;
 
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-error: #dc3545;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 
   --color-link: var(--color-primary);
 }
@@ -22,20 +22,20 @@
 /* Тёмная тема */
 [data-theme="dark"]
 {
-  --color-primary: #3399ff;
-  --color-primary-hover: #267acc;
-  --color-secondary: #ff9933;
-  --color-secondary-hover: #e68a00;
+  --color-primary: #8A2BE2;
+  --color-primary-hover: #9370DB;
+  --color-secondary: #8A2BE2;
+  --color-secondary-hover: #9370DB;
 
-  --color-background: #121212;
-  --color-surface: #1e1e1e;
-  --color-text: #f1f1f1;
-  --color-text-secondary: #cccccc;
-  --color-border: #333333;
+  --color-background: #1a1a1a;
+  --color-surface: #2d2d2d;
+  --color-text: #e8e8e8;
+  --color-text-secondary: #b8b8b8;
+  --color-border: #404040;
 
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-error: #dc3545;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 
   --color-link: var(--color-primary);
 }

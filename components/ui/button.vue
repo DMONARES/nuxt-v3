@@ -19,45 +19,50 @@
 	</button>
 </template>
 
-<style lang='scss'>
-	.ui-button
+<style lang="scss" scoped>
+@use "~/assets/styles/variables/index" as *;
+@use "~/assets/styles/base/mixins" as *;
+
+.ui-button
+{
+	// base styles
+	cursor: pointer;
+	border: none;
+	padding: 12px 24px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	background-color: var(--color-primary);
+	color: white;
+	font-size: 1rem;
+	font-weight: 500;
+
+	@include transition();
+
+	// effects
+	&:disabled
 	{
-		// base styles
-		cursor: pointer;
-		border: none;
-		padding: 12px 24px;
-		border: 1px solid transparent;
-		border-radius: 4px;
-		background-color: $black;
-		color: $white;
-		font-size: 1rem;
+		pointer-events: none;
+		opacity: .7;
+	}
+	&:hover { 
+		background-color: var(--color-primary-hover);
+	}
 
-		@include transition();
+	// sizes
+	&.xl { padding: 20px 64px; }
 
-		// effects
-		&:disabled
+	// variants
+	&.border
+	{
+		background-color: transparent;
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+
+		&:hover
 		{
-			pointer-events: none;
-			opacity: .7;
-		}
-		&:hover { opacity: .8; }
-
-		// sizes
-		&.xl { padding: 20px 64px; }
-
-		// variants
-		&.border
-		{
-			background-color: transparent;
-			border-color: $black;
-			color: $black;
-
-			&:hover
-			{
-				opacity: 1;
-				background-color: $black;
-				color: $white;
-			}
+			background-color: var(--color-primary);
+			color: white;
 		}
 	}
+}
 </style>

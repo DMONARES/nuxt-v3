@@ -36,43 +36,48 @@
 	</label>
 </template>
 
-<style lang="scss">
-	.ui-checkbox {
-		cursor: pointer;
-		display: flex;
-		gap: 12px;
-		align-items: center;
+<style lang="scss" scoped>
+@use "~/assets/styles/variables/index" as *;
+@use "~/assets/styles/base/mixins" as *;
 
-		input { display: none; }
-		&.error {
-			.ui-checkbox__checkbox { border-color: $red }
-			.ui-checkbox__label { color: $red }
-		}
+.ui-checkbox {
+	cursor: pointer;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+
+	input { display: none; }
+	&.error {
+		.ui-checkbox__checkbox { border-color: var(--color-error) }
+		.ui-checkbox__label { color: var(--color-error) }
 	}
+}
 
-	.ui-checkbox__checkbox {
-		border: 2px solid $lightGray;
-		width: 24px;
-		height: 24px;
+.ui-checkbox__checkbox {
+	border: 2px solid var(--color-border);
+	width: 24px;
+	height: 24px;
+	border-radius: 4px;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		@include transition();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include transition();
 
-		&.active
-		{
-			background-color: $black;
-			border-color: $black;
-		}
+	&.active
+	{
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
 	}
+}
 
-	.ui-checkbox__label {
-		font-size: 1.125rem;
+.ui-checkbox__label {
+	font-size: 1rem;
+	color: var(--color-text);
 
-		a {
-			color: inherit;
-			text-decoration: underline;
-		}
+	a {
+		color: inherit;
+		text-decoration: underline;
 	}
+}
 </style>

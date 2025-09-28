@@ -40,60 +40,20 @@
 	</div>
 </template>
 
-<style lang='scss'>
-	.ui-accordion
+<style lang="scss" scoped>
+@use "~/assets/styles/variables/index" as *;
+@use "~/assets/styles/base/mixins" as *;
+
+.ui-accordion
+{
+	border-bottom: 2px solid var(--color-border);
+	@include transition();
+
+	&.active
 	{
-		border-bottom: 2px solid $black;
-		@include transition();
+		padding-bottom: 16px;
 
-		&.active
-		{
-			padding-bottom: 16px;
-
-			.ui-accordion__head-icon
-			{
-				span
-				{
-					&:last-child { transform: rotate(0deg) translate(-1px, -1px); }
-				}
-			}
-		}
-	}
-
-	.ui-accordion__head
-	{
-		cursor: pointer;
-		padding: 16px 8px;
-		transition: 500ms;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 10px;
-	}
-
-	.ui-accordion__head-title
-	{
-		font-size: 1rem;
-		font-weight: 500;
-	}
-
-	.ui-accordion__head-icon
-	{
-		flex-shrink: 0;
-
-		span {
-			display: block;
-			background-color: $black;
-			width: 16px;
-			height: 1px;
-			border-radius: 2px;
-
-			@include transition();
-			&:last-child { transform: rotate(90deg) translate(-1px, 0px); }
-		}
-
-		&.active
+		.ui-accordion__head-icon
 		{
 			span
 			{
@@ -101,14 +61,58 @@
 			}
 		}
 	}
+}
 
-	.ui-accordion__content
-	{
-		overflow: hidden;
-		padding: 0 8px;
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-		transition: max-height 500ms;
+.ui-accordion__head
+{
+	cursor: pointer;
+	padding: 16px 8px;
+	transition: 500ms;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.ui-accordion__head-title
+{
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--color-text);
+}
+
+.ui-accordion__head-icon
+{
+	flex-shrink: 0;
+
+	span {
+		display: block;
+		background-color: var(--color-text);
+		width: 16px;
+		height: 1px;
+		border-radius: 2px;
+
+		@include transition();
+		&:last-child { transform: rotate(90deg) translate(-1px, 0px); }
 	}
+
+	&.active
+	{
+		span
+		{
+			&:last-child { transform: rotate(0deg) translate(-1px, -1px); }
+		}
+	}
+}
+
+.ui-accordion__content
+{
+	overflow: hidden;
+	padding: 0 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	transition: max-height 500ms;
+}
 </style>
