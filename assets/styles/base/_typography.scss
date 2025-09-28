@@ -1,0 +1,81 @@
+/* Типографика — базовые классы */
+
+/* Заголовки */
+.h1
+{
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: 700;
+}
+
+.h2
+{
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: 700;
+}
+
+.h3
+{
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 700;
+}
+
+.h4
+{
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 500;
+}
+
+.h5
+{
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: 500;
+}
+
+.h6
+{
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-h6);
+  font-weight: 500;
+}
+
+/* Абзацы */
+.text-p
+{
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-weight: 400;
+}
+
+/* Адаптивные размеры текста */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+
+/* Примеры кастомных текстов */
+.text-primary { color: var(--color-text); }
+
+.text-secondary { color: var(--color-text-secondary); }
+
+.text-success { color: var(--color-success); }
+
+.text-warning { color: var(--color-warning); }
+
+.text-error { color: var(--color-error); }
+
+/* Ссылки */
+.text-link
+{
+  color: var(--color-link);
+  text-decoration: underline;
+	transition: all .3s ease;
+  cursor: pointer;
+
+  &:hover { opacity: 0.8; }
+}

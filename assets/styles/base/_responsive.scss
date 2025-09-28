@@ -1,0 +1,44 @@
+@use "mixins" as *;
+
+/* Адаптивные переменные */
+
+/* Адаптивные отступы */
+@include tablet-up()
+{
+  :root
+  {
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --container-padding: 24px;
+  }
+}
+
+@include desktop-up()
+{
+  :root
+  {
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+    --container-padding: 32px;
+  }
+}
+
+/* Адаптивная типографика */
+@include tablet-up()
+{
+  :root
+  {
+    --font-size-base: 16px;
+  }
+}
+
+@include desktop-up()
+{
+  :root
+  {
+    --font-size-base: 18px;
+  }
+}

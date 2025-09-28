@@ -1,0 +1,24 @@
+// Базовые spacing значения
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Адаптивные spacing переменные
+:root
+{
+  // Мобильные устройства
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+
+  // Контейнерные отступы
+  --container-padding: 16px;
+}
+
+/* Адаптивные отступы будут в отдельном файле */

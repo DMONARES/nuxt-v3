@@ -1,0 +1,43 @@
+html, body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
+}
+
+a
+{
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover { color: var(--color-primary-hover); }
+}
+
+ul, ol
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hidden { display: none !important; }
+
+.visible { display: block !important; }
+
+*
+{
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+.is-loading
+{
+  opacity: 0.6;
+  pointer-events: none;
+}

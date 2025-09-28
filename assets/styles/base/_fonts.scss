@@ -1,0 +1,32 @@
+/* 1. Подключение шрифтов */
+@font-face
+{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@/assets/fonts/Inter/Inter18pt-Regular.woff2") format("woff2"),
+       url("@/assets/fonts/Inter/Inter18pt-Regular.woff") format("woff");
+}
+
+@font-face
+{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@/assets/fonts/Inter/Inter18pt-Bold.woff2") format("woff2"),
+       url("@/assets/fonts/Inter/Inter18pt-Bold.woff") format("woff");
+}
+
+/* 2. Переменные для шрифтов */
+:root
+{
+  --font-primary: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-monospace: "Fira Code", monospace, monospace;
+}
+
+/* 3. Базовые стили */
+body { font-family: var(--font-primary); }
+
+code, pre { font-family: var(--font-monospace); }

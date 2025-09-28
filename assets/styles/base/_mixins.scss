@@ -1,0 +1,179 @@
+/* Миксины */
+
+// 1. Брейкпоинты
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// 2. Медиазапросы
+@mixin mobile()
+{
+  @media (max-width: 767px) { @content; }
+}
+
+@mixin tablet()
+{
+  @media (min-width: 768px) and (max-width: 1023px) { @content; }
+}
+
+@mixin desktop()
+{
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin mobile-up()
+{
+  @media (min-width: 576px) { @content; }
+}
+
+@mixin tablet-up()
+{
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop-up()
+{
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin large-up()
+{
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin xlarge-up()
+{
+  @media (min-width: 1400px) { @content; }
+}
+
+// 2. Шрифты и типографика
+@mixin font($size, $line-height, $weight: 400)
+{
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+// 3. Контейнеры
+@mixin container($max-width: 1200px)
+{
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+// 4. Helpers
+@mixin truncate($lines: 1)
+{
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin visually-hidden()
+{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// 5. Анимации
+@mixin transition($property: all, $duration: 0.3s, $timing: ease)
+{
+  transition: $property $duration $timing;
+}
+
+@mixin fade-in($duration: 0.3s)
+{
+  opacity: 0;
+  animation: fadeIn $duration ease forwards;
+}
+
+@keyframes fadeIn
+{
+  to { opacity: 1; }
+}
+
+// 6. Грид и флекс
+@mixin flex-center()
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between()
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column()
+{
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin grid-columns($count)
+{
+  display: grid;
+  grid-template-columns: repeat($count, 1fr);
+  gap: var(--spacing-md);
+}
+
+// 7. Адаптивная grid система
+@mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3)
+{
+  display: grid;
+  grid-template-columns: repeat($mobile, 1fr);
+  gap: var(--spacing-md);
+
+  @include tablet-up()
+  {
+    grid-template-columns: repeat($tablet, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  @include desktop-up()
+  {
+    grid-template-columns: repeat($desktop, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+// 8. Адаптивные отступы
+@mixin responsive-spacing($property, $mobile, $tablet: null, $desktop: null)
+{
+  #{$property}: $mobile;
+
+  @if $tablet {
+    @include tablet-up()
+    {
+      #{$property}: $tablet;
+    }
+  }
+
+  @if $desktop {
+    @include desktop-up()
+    {
+      #{$property}: $desktop;
+    }
+  }
+}
+
