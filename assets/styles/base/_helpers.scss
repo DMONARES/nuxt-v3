@@ -101,51 +101,6 @@
   }
 }
 
-/* Адаптивные utility классы */
-
-// Адаптивные отступы
-.p-xs { padding: var(--spacing-xs); }
-.p-sm { padding: var(--spacing-sm); }
-.p-md { padding: var(--spacing-md); }
-.p-lg { padding: var(--spacing-lg); }
-.p-xl { padding: var(--spacing-xl); }
-.p-xxl { padding: var(--spacing-xxl); }
-
-.m-xs { margin: var(--spacing-xs); }
-.m-sm { margin: var(--spacing-sm); }
-.m-md { margin: var(--spacing-md); }
-.m-lg { margin: var(--spacing-lg); }
-.m-xl { margin: var(--spacing-xl); }
-.m-xxl { margin: var(--spacing-xxl); }
-
-// Адаптивные размеры текста
-.text-xs { font-size: 0.75rem; }
-.text-sm { font-size: var(--font-size-sm); }
-.text-base { font-size: var(--font-size-base); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: var(--font-size-xl); }
-
-// Адаптивные display классы
-.d-none { display: none; }
-.d-block { display: block; }
-.d-flex { display: flex; }
-.d-grid { display: grid; }
-.d-inline { display: inline; }
-.d-inline-block { display: inline-block; }
-
-// Адаптивные flex утилиты
-.flex-center { @include flex-center(); }
-.flex-between { @include flex-between(); }
-.flex-column { @include flex-column(); }
-.flex-wrap { flex-wrap: wrap; }
-.flex-nowrap { flex-wrap: nowrap; }
-
-// Адаптивные grid утилиты
-.grid-1 { @include responsive-grid(1, 1, 1); }
-.grid-2 { @include responsive-grid(1, 2, 2); }
-.grid-3 { @include responsive-grid(1, 2, 3); }
-.grid-4 { @include responsive-grid(1, 2, 4); }
-
 // Адаптивные visibility
 .hidden-mobile
 {
