@@ -12,6 +12,8 @@ export default defineNuxtConfig({
 		classSuffix: "",
 	},
 
+	ignore: process.env.NODE_ENV === 'production' ? ['pages/dev/**'] : [],
+
 	// env, пожалуйста, создайте в корне проекта env c именем NUXT_PUBLIC_API_HOST, если это требуется ⬇️
 
 	// runtimeConfig: {
@@ -32,17 +34,18 @@ export default defineNuxtConfig({
 	// },
 
 	// css base configuration
-	css: ['@/assets/styles/index.scss'],
+
+	css: [
+    '@/assets/styles/index.scss', // глобальные стили
+  ],
 
 	vite: {
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: 'modern',
-					silenceDeprecations: ['import', 'global-builtin', 'legacy-js-api'],
-					additionalData: `@use "@/assets/styles/base/_variables.scss" as *;  @use "@/assets/styles/base/_mixins.scss" as *;`,
-				},
-			},
-		},
-	},
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/assets/styles/_setup.scss" as *;`,
+        },
+      },
+    },
+  },
 })
